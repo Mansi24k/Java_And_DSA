@@ -43,8 +43,8 @@ import java.util.*;
     }
 }*/
 
-//print reverse of number = 28679
-public class Loops {
+// print reverse of number = 28679
+/*public class Loops {
   public static void main(String args[]){
     int num =  28679;
     while(num>0){
@@ -53,8 +53,7 @@ public class Loops {
         num /= 10;
     }
   }
-    
-}
+}*/
 
 
 //FOR LOOP
@@ -69,4 +68,38 @@ public class Loops {
       }
 }
 }*/
+
+//DO-WHILE LOOP
+
+//Print hello world 10 times.
+
+/*public class Loops {
+   public static void main(String args[]){
+    int num = 1;
+    do{
+        System.out.println("Hello World!");
+        num++;
+    }while(num <= 10);
+   }  
+}*/
+
+//keep entering number till user enters multiple of 10.
+/*public class Loops {
+
+   public static void main(String args[]){
+    Scanner user = new Scanner(System.in);
+
+    do{
+        System.out.print("Enter the number: ");
+        int number = user.nextInt();
+        if (number % 10 ==0) {
+            break;
+        }
+        System.out.println(number);
+    }while(true);
+    System.out.println("Entered number is multiple of 10.");
+   }
+}*/
+
+// check number is prime or not
 
