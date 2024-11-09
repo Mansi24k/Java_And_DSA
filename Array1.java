@@ -50,6 +50,92 @@ public class Array1 {
                 System.out.println("Smallest number is: "+smallest);
     }
 
+    //5. binary search
+    public static int binarySearch(int numbers[], int key){
+            //start and end
+            int start=0, end = numbers.length-1;
+
+            //compare
+            while(start <= end){
+                //mid value
+                int mid = (start+end)/2;
+
+                if(numbers[mid] == key){
+                    return mid;
+                }
+                if(numbers[mid] < key){
+                    start = mid+1;
+                }
+                if (numbers[mid] >key) {
+                    end = mid-1;
+                }
+            }
+            return -1;
+    }
+
+    //6. reverse array
+    public static void reverse(int  numtwo[]){
+        int first = 0, Last = numtwo.length-1;
+
+        while (first < Last) {
+            int temp =  numtwo[Last];
+            numtwo[Last] = numtwo[first];
+            numtwo[first] = temp;
+
+            first++;
+            Last--;
+        }
+    }
+
+    //7. pairs in an array
+    public static void printpairs(int numthree[]){
+        //to count total pairs
+        int tp =0;
+        for(int i=0; i< numthree.length; i++){
+            int current = numthree[i];
+            for(int j=i+1; j<numthree.length; j++){
+                System.out.print("("+current+","+numthree[j]+")"+ " ");
+                tp++;
+            }
+            System.out.println();
+        }
+        System.out.println("total pairs= "+tp);
+    }
+
+    //8.print subarrays of given array
+    public static void printsubarray(int arrayfour[]){
+    // to find total pairs
+        int tp =0;
+        //to find sum of each subarray
+        int sum =0;
+
+        for(int i=0; i<arrayfour.length; i++){
+            int start = i;
+            sum = arrayfour[i];
+            for(int j=i; j<arrayfour.length; j++){
+                int end =j;
+                for(int k=start ;k<=end; k++){
+                    System.out.print(arrayfour[k]+ " ");   
+                }
+                tp++;
+                
+                if (arrayfour[start] == arrayfour[end]) {
+                    System.out.print("sum "+sum); 
+                }else{
+                    sum = sum + arrayfour[end]; 
+                    System.out.print("sum "+sum);  
+                }
+               
+                System.out.println();
+            }
+            
+            System.out.println();
+        }
+        System.out.println("total pairs= "+tp);
+    }
+
+
+
     public static void main(String args[]){
         //for array as argument
         //int marks[]={91,92,93};
@@ -90,8 +176,30 @@ public class Array1 {
         // }
 
         //for largest and smallest number in array
-        int number[] ={1,2,6,3,5};
-        Find_Num( number);
+        // int number[] ={1,2,6,3,5};
+        // Find_Num( number);
+
+        //for binary search
+        // int numbers[] = {2,4,5,6,7,8,9,10,11};
+        // int key = 8;
+        // System.out.println("the index of key is: "+ binarySearch( numbers,  key) );
+
+        //for reverse array
+    //     int  numtwo[] = {2,5,6,8,10};
         
-    }
+    //     reverse( numtwo);
+    //     for(int i=0; i<numtwo.length; i++){
+    //         System.out.print(numtwo[i]+" ");
+    //     }
+
+    //for pairs in an array
+    // int numthree[] = {2,4,5,6,8,10};
+    // printpairs(numthree);
+
+    //for subarrays of given array
+    int arrayfour[] = {2,4,6,8,10};
+    printsubarray(arrayfour);
+
+
+     }
 }
