@@ -134,6 +134,29 @@ public class Array1 {
         System.out.println("total pairs= "+tp);
     }
 
+    //. 9. to find maxsum of an subarray -- brute forece (basic solution to find)
+    public static void maxsubarraysum(int arrayfour[]){
+        int currsum = 0;
+        int maxsum = Integer.MIN_VALUE;
+
+        for (int i=0; i < arrayfour.length ; i++){
+            int start = i;
+            for(int j=i; j<arrayfour.length;j++){
+                int end = j;
+                currsum=0;
+                for(int k=start; k<=end ; k++){
+                    //sum of subarrray
+                    currsum += arrayfour[k];
+                }
+                System.out.println(currsum);
+                if (maxsum < currsum) {
+                    maxsum = currsum;
+                }
+            }
+        }
+        System.out.println("max sum= "+ maxsum);
+    }
+
 
 
     public static void main(String args[]){
@@ -198,7 +221,10 @@ public class Array1 {
 
     //for subarrays of given array
     int arrayfour[] = {2,4,6,8,10};
-    printsubarray(arrayfour);
+    //printsubarray(arrayfour);
+
+    //for maxsum of subarray
+    maxsubarraysum(arrayfour);
 
 
      }
